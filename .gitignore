@@ -1,0 +1,24 @@
+# VuePress files
+docs/.vuepress/.temp/
+docs/.vuepress/.cache/
+docs/.vuepress/dist/
+
+# Dist files
+dist/
+lib/
+
+# Node modules
+node_modules/
+
+# Log files
+*.log
+
+# Typescript build info
+*.tsbuildinfo
+
+
+# others
+_Attachment
+.obsidian
+.trash
+.npmrc

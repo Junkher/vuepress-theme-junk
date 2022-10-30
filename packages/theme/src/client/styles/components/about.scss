@@ -1,0 +1,58 @@
+@import '../_mixins';
+@import '../_variables';
+
+.about {
+  .img-wrapper {
+    position: relative;
+    height: 20rem;
+    .banner {
+      position: absolute;
+      width: 100%;
+      height: 19rem;
+      object-fit: cover;
+      opacity: 0.9;
+      background-repeat: no-repeat; /* Do not repeat the image */
+      background-size: cover; /* Resize the background image to cover the entire container */
+    }
+    .avatar {
+      position: absolute;
+      border-radius: 50%;
+      width: 11rem;
+      left: 2.5rem;
+      bottom: 0;
+      &:hover {
+        animation: rotating 2s linear infinite;
+      }
+    }
+  }
+
+  .text-wrapper {
+    padding: 0 var(--home-padding-x);
+    h1 {
+      padding-top: 50px;
+    }
+    p {
+      padding-top: 12px;
+    }
+  }
+}
+
+@media (max-width: $MQMobile) {
+  .about {
+    .avatar {
+      width: 5rem;
+    }
+  }
+}
+
+@keyframes rotating {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

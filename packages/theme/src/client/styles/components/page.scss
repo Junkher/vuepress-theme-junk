@@ -1,0 +1,144 @@
+@import '../_mixins';
+@import '../_variables';
+
+.page {
+  padding-bottom: 2rem;
+  display: block;
+
+  .theme-junk-content {
+    @include content_wrapper;
+    padding-top: 2rem;
+  }
+}
+
+.page-meta {
+  @include content_wrapper;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  overflow: auto;
+
+  .meta-item {
+    cursor: default;
+    margin-top: 0.8rem;
+
+    .meta-item-label {
+      font-weight: 500;
+      color: var(--c-text-lighter);
+    }
+
+    .meta-item-info {
+      font-weight: 400;
+      color: var(--c-text-quote);
+    }
+  }
+
+  .edit-link {
+    display: inline-block;
+    margin-right: 0.25rem;
+  }
+
+  .last-updated {
+    float: right;
+  }
+}
+
+@media (max-width: $MQMobile) {
+  .page-meta {
+    .last-updated {
+      font-size: 0.8em;
+      float: none;
+    }
+
+    .contributors {
+      font-size: 0.8em;
+    }
+  }
+}
+
+.page-nav {
+  @include content_wrapper;
+  padding-top: 1rem;
+  padding-bottom: 0;
+
+  .inner {
+    min-height: 2rem;
+    margin-top: 0;
+    border-top: 1px solid var(--c-border);
+    transition: border-color var(--t-color);
+    padding-top: 1rem;
+    overflow: auto;
+  }
+
+  .prev {
+    a:before {
+      content: '←';
+    }
+  }
+  .next {
+    float: right;
+    a:after {
+      content: '→';
+    }
+  }
+}
+
+.page-top {
+  width: 100%;
+  padding-top: 8rem;
+  padding-bottom: 2rem;
+  position: fixed;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  transition: opacity 0.3s ease-in-out;
+  z-index: 20;
+}
+
+.page-top.shrunk {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.page-top.hide {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.page-top-holder {
+  height: 340px;
+}
+
+.page-top-image {
+  width: 100%;
+  position: absolute;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  z-index: 1;
+}
+
+.page-top-content {
+  @include content_wrapper;
+  z-index: 3;
+  // padding-top: 10rem;
+  position: relative;
+  color: var(--c-text-ultra);
+  .page-title {
+    letter-spacing: 0.1rem;
+  }
+  .page-description {
+    font-style: italic;
+    padding-top: 0.25rem;
+    padding-bottom: 1rem;
+  }
+}
+
+.page-top-mask {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  z-index: 2;
+  backdrop-filter: blur(7px);
+  background: var(--page-top-mask);
+}

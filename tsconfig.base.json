@@ -1,0 +1,17 @@
+{
+  "extends": "tsconfig-vuepress/base.json",
+  "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
+    "lib": ["DOM", "ES2020"],
+    "module": "ESNext",
+    "moduleResolution": "NodeNext" /*to enable package.json exports*/,
+    "jsx": "preserve",
+    "noEmitOnError": true,
+    "noImplicitAny": false,
+    "skipLibCheck": true,
+    "target": "ES2020",
+    "paths": {
+      "@theme/*": ["./packages/theme/src/client/components/*"]
+    }
+  }
+}

@@ -1,0 +1,43 @@
+<script setup lang="ts">
+import Common from '@theme/Common.vue'
+import Page from '@theme/Page.vue'
+import { usePageData, usePageFrontmatter } from '@vuepress/client'
+import { useScroll } from '@vueuse/core'
+import { computed } from 'vue'
+import type { JunkThemeNormalPageFrontmatter } from '../../shared/index.js'
+
+const page = usePageData()
+const frontmatter = usePageFrontmatter<JunkThemeNormalPageFrontmatter>()
+
+// toc
+const shouldShowToc = computed(() => frontmatter.value.toc)
+const { y } = useScroll(document)
+const pageTopHeight = 340
+
+// classes
+const containerClass = computed(() => [frontmatter.value.pageClass])
+</script>
+
+<template>
+  <Common>
+    <div class="theme-container" :class="containerClass">
+      <slot name="page">
+        <Page :key="page.path">
+          <template #top>
+            <slot name="page-top" />
+          </template>
+          <template #content-top>
+            <slot name="page-content-top" />
+          </template>
+          <template #content-bottom>
+            <slot name="page-content-bottom" />
+          </template>
+          <template #bottom>
+            <slot name="page-bottom" />
+          </template>
+        </Page>
+      </slot>
+      <Toc v-if="shouldShowToc" :class="{ fixed: y > pageTopHeight }" />
+    </div>
+  </Common>
+</template>

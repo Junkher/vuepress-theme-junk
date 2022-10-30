@@ -1,0 +1,34 @@
+@import '../_mixins';
+@import '../_variables';
+
+.table-of-contents {
+  $sideWidth: calc((100% - var(--content-width)) / 2);
+  position: fixed;
+  width: var(--toc-width);
+  padding-left: 0;
+  list-style: none;
+  font-size: 14px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  bottom: 15rem;
+  right: calc($sideWidth - var(--toc-width) - 5rem);
+  .badge {
+    vertical-align: middle;
+  }
+}
+
+.vuepress-toc {
+  li {
+    list-style-type: none;
+    a {
+      color: var(--c-link);
+      &:hover {
+        color: var(--c-link-active);
+      }
+    }
+    a.active {
+      color: var(--c-link-active);
+      font-weight: bold;
+    }
+  }
+}

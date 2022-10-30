@@ -1,0 +1,13 @@
+{
+  "extends": "./tsconfig.base.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "jsx": "preserve",
+    "paths": {
+      "@theme/*": ["./packages/theme/src/client/components/*"]
+    },
+    "types": ["webpack-env", "vite/client", "@vuepress/client/types"]
+  },
+  "include": ["**/.vuepress/**/*", "packages/**/*"],
+  "exclude": ["node_modules", ".temp", "lib", "dist"]
+}

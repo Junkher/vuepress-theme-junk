@@ -1,0 +1,14 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "module": "ES2020",
+    "rootDir": "./src",
+    "outDir": "./lib",
+    "baseUrl": ".",
+    "paths": {
+      "@theme/*": ["./src/client/components/*"]
+    },
+    "types": ["@vuepress/client/types"]
+  },
+  "include": ["./src"]
+}

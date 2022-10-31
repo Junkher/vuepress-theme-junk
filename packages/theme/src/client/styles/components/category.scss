@@ -2,13 +2,7 @@
 @import '../_variables';
 
 .category {
-  position: sticky;
-  width: 100%;
-  top: 0;
-  background-color: var(--c-bg);
-  z-index: 10;
   .category-item-list {
-    margin: 2rem var(--home-padding-x) 0;
     display: flex;
     flex-direction: row;
     border-bottom: 1px solid var(--c-border);
@@ -16,12 +10,12 @@
       display: inline-block;
       vertical-align: middle;
       overflow: hidden;
-      padding: 0.7rem 0.5rem;
-      margin-right: 10rem;
-      font-size: 1.5rem;
+      padding: 0.4rem 0.5rem;
+      margin-right: 7rem;
+      font-size: 1.25rem;
       line-height: 1.75rem;
       cursor: pointer;
-      transition: background-color 0.3s, color 0.3s;
+      transition: color 0.5s ease;
       color: var(--c-link);
       &.router-link-active {
         color: var(--c-link-active);
@@ -34,6 +28,15 @@
       &:hover {
         color: var(--c-link-active);
       }
+    }
+  }
+}
+
+@media (max-width: $MQMobile) {
+  .category .category-item-list {
+    justify-content: space-around;
+    .category-item {
+      margin-right: 0;
     }
   }
 }

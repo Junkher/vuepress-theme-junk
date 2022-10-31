@@ -6,8 +6,10 @@ import Common from '@theme/Common.vue'
 
 <template>
   <Common>
-    <About />
-    <Category />
+    <main class="home">
+      <About />
+      <Category />
+    </main>
   </Common>
 </template>
 

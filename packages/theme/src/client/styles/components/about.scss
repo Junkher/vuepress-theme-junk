@@ -17,7 +17,7 @@
     .avatar {
       position: absolute;
       border-radius: 50%;
-      width: 11rem;
+      width: 10rem;
       left: 2.5rem;
       bottom: 0;
       &:hover {
@@ -27,11 +27,15 @@
   }
 
   .text-wrapper {
-    padding: 0 var(--home-padding-x);
+    @include home_wrapper;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    // padding: 2rem var(--home-padding-x) 1rem;
     h1 {
-      padding-top: 50px;
+      font-size: 2rem;
     }
     p {
+      font-size: 14px;
       padding-top: 12px;
     }
   }
@@ -39,8 +43,14 @@
 
 @media (max-width: $MQMobile) {
   .about {
-    .avatar {
-      width: 5rem;
+    .img-wrapper {
+      height: 12rem;
+      .banner {
+        height: 11rem;
+      }
+      .avatar {
+        width: 5rem;
+      }
     }
   }
 }

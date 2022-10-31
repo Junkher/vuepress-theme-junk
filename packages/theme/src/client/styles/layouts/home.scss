@@ -1,0 +1,17 @@
+@import '../_variables';
+@import '../mixins';
+
+.home {
+  .category {
+    position: sticky;
+    top: 0;
+    @include home_wrapper;
+    background-color: var(--c-bg);
+    z-index: 10;
+  }
+  .post-list-wrapper {
+    @include home_wrapper;
+    margin-top: 2rem;
+    z-index: 0;
+  }
+}

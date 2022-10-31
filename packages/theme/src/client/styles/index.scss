@@ -1,11 +1,14 @@
-@use 'mode/vars';
-@use 'mode/vars-dark';
 @use 'normalize';
-@use 'home';
 @use 'transitions';
 
+// mode
+@use 'mode/vars';
+@use 'mode/vars-dark';
+
+// plugin
 @use '@vuepress/plugin-palette/style';
 
+// components
 @use 'components/about';
 @use 'components/category';
 @use 'components/post-list';
@@ -18,6 +21,7 @@
 @use 'components/custom-container';
 @use 'components/page';
 
-@use 'layouts/poem';
+// layouts
 @use 'layouts/layout';
 @use 'layouts/hero';
+@use 'layouts/home';

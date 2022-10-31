@@ -14,6 +14,18 @@
   }
 }
 
+@mixin home_wrapper {
+  padding: 0 3rem;
+
+  @media (max-width: $MQNarrow) {
+    padding: 0 2rem;
+  }
+
+  @media (max-width: $MQMobileNarrow) {
+    padding: 0 1.5rem;
+  }
+}
+
 @mixin dropdown_wrapper {
   transition: height 0.1s ease-out;
   overflow: hidden;
@@ -36,4 +48,11 @@
   -ms-overflow-style: none;
   // Firefox
   scrollbar-width: none;
+}
+
+@mixin line_clamp($value) {
+  display: -webkit-box;
+  -webkit-line-clamp: $value;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }

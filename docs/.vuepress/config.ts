@@ -42,14 +42,15 @@ export default defineUserConfig({
     'content/life/*.md',
     'content/poem/*.md',
     'content/tech/*.md',
+    'index.md',
     '!.vuepress',
     '!node_modules',
   ],
 
   // configure default theme
   theme: junkTheme({
-    logo: '/images/hero.png',
-    repo: 'vuepress/vuepress-next',
+    logo: '/images/logo.png',
+    repo: 'Junkher/vuepress-theme-junk',
     docsDir: 'docs',
     home: '/home/',
     heroContent: `

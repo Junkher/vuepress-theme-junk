@@ -43,30 +43,6 @@ export const junkTheme = ({
 
   return {
     name: 'vuepress-theme-junk',
-    // onInitialized(app) {
-    //   if (app.options.bundler.name === '@vuepress/bundler-vite') {
-    //     app.options.bundler = viteBundler({
-    //       viteOptions: {
-    //         css: {
-    //           postcss: {
-    //             plugins: [
-    //               // tailwindcss({
-    //               //   content: [
-    //               //     './public/**/*.html',
-    //               //     './src/components/**/*.{vue,js,ts}',
-    //               //   ],
-    //               //   corePlugins: {
-    //               //     preflight: false,
-    //               //   },
-    //               // } as unknown as Config),
-    //               autoprefixer({}),
-    //             ],
-    //           },
-    //         },
-    //       },
-    //     })
-    //   }
-    // },
 
     templateBuild: path.resolve(__dirname, '../../templates/build.html'),
 
@@ -247,55 +223,24 @@ export const junkTheme = ({
       }),
     ],
     onInitialized: async (app): Promise<void> => {
-      // if (app.options.bundler.name === '@vuepress/bundler-vite') {
-      //   app.options.bundler = viteBundler({
-      //     viteOptions: {
-      //       css: {
-      //         postcss: {
-      //           plugins: [
-      //             // tailwindcss({
-      //             //   content: [
-      //             //     './public/**/*.html',
-      //             //     './src/components/**/*.{vue,js,ts}',
-      //             //   ],
-      //             //   corePlugins: {
-      //             //     preflight: false,
-      //             //   },
-      //             // } as unknown as Config),
-      //             autoprefixer({
-      //               overrideBrowserslist: [
-      //                 'Android 4.1',
-      //                 'iOS 7.1',
-      //                 'Chrome > 31',
-      //                 'ff > 31',
-      //                 'ie >= 8',
-      //                 // 'last 2 versions', // 所有主流浏览器最近2个版本
-      //               ],
-      //             }),
-      //           ],
-      //         },
-      //       },
-      //     },
-      //   })
-      // }
-
       if (app.pages.every((page) => page.path !== '/')) {
-        // create a homepage
-        const homepage = await createPage(app, {
+        // create a heropage
+        const heropage = await createPage(app, {
           path: '/',
           // set frontmatter
           frontmatter: {
             layout: 'Hero',
+            title: 'Welcome:)',
           },
           // set markdown content
           content: `\
               # Welcome to ${app.options.title}
 
-              This is the default homepage
+              This is the default heropage
               `,
         })
         // add it to `app.pages`
-        app.pages.push(homepage)
+        app.pages.push(heropage)
       }
     },
   }

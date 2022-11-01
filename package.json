@@ -18,6 +18,7 @@
     "docs:dev": "pnpm --filter=docs docs:dev",
     "docs:release": "pnpm build && pnpm docs:build",
     "docs:serve": "pnpm --filter=docs docs:serve",
+    "docs:bns": "pnpm --filter=docs docs:bns",
     "lint": "eslint --ext .cjs,.js,.ts,.vue .",
     "prepare": "husky install",
     "release": "pnpm release:check && pnpm release:version && pnpm release:publish",

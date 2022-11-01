@@ -3,10 +3,11 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "docs:bns": "pnpm docs:build && pnpm docs:serve",
     "docs:build": "vuepress-cli build --clean-cache",
     "docs:clean": "rimraf .vuepress/.temp .vuepress/.cache .vuepress/dist",
     "docs:dev": "vuepress-cli dev --clean-cache",
-    "docs:serve": "anywhere -s -h localhost -d .vuepress/dist"
+    "docs:serve": "serve .vuepress/dist"
   },
   "dependencies": {
     "@vuepress/bundler-vite": "2.0.0-beta.53",
@@ -21,6 +22,7 @@
     "@vuepress/utils": "2.0.0-beta.53",
     "anywhere": "^1.6.0",
     "sass-loader": "^13.0.2",
+    "serve": "^14.0.1",
     "vue": "^3.2.39",
     "vuepress-theme-junk": "workspace:*"
   }

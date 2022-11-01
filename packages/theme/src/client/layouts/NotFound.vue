@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { onMounted, ref } from 'vue'
 import { useBlogCategory } from 'vuepress-plugin-blog2/client'
 import { useThemeLocaleData } from '../composables/index.js'
 
@@ -10,8 +11,13 @@ const getMsg = (): string =>
 
 const categoryMap = useBlogCategory('category')
 const categories = Object.keys(categoryMap.value.map)
+
+const homeLink = ref('')
 const getRandomTo = (): string =>
   categories[Math.floor(Math.random() * categories.length)].toLowerCase()
+onMounted(() => {
+  homeLink.value = `/home/${getRandomTo()}/`
+})
 // const homeLink = themeLocale.value.home ?? routeLocale.value
 const homeText = themeLocale.value.backToHome ?? 'Back to home'
 </script>
@@ -24,7 +30,7 @@ const homeText = themeLocale.value.backToHome ?? 'Back to home'
 
         <blockquote>{{ getMsg() }}</blockquote>
 
-        <RouterLink :to="`/home/${getRandomTo()}/`">{{ homeText }}</RouterLink>
+        <RouterLink :to="homeLink">{{ homeText }}</RouterLink>
       </div>
     </main>
   </div>

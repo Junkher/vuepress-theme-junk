@@ -8,14 +8,14 @@ const heroBtnText = themeLocale.value.heroBtnText
 
 const categoryMap = useBlogCategory('category')
 const categories = Object.keys(categoryMap.value.map)
-const to =
+const getRandomTo = (): string =>
   categories[Math.floor(Math.random() * categories.length)].toLowerCase()
 </script>
 
 <template>
   <main class="hero">
     <div class="hero-content text-center" v-html="heroContent" />
-    <a :href="`/home/${to}/`">{{ heroBtnText }}</a>
+    <a :href="`/home/${getRandomTo()}/`">{{ heroBtnText }}</a>
     <!-- <RouterLink to="/category"> Fk Me </RouterLink> -->
   </main>
 </template>

@@ -1,3 +1,12 @@
+# [2.0.0-beta.2](https://github.com/Junkher/vuepress-theme-junk/compare/v2.0.0-beta.1...v2.0.0-beta.2) (2022-11-01)
+
+
+### Bug Fixes
+
+* render `v-html` in client side ([9db72b3](https://github.com/Junkher/vuepress-theme-junk/commit/9db72b3d6d83daf3fcfaa746c2825794b15ab0c3))
+
+
+
 # [2.0.0-beta.1](https://github.com/Junkher/vuepress-theme-junk/compare/v2.0.0-beta.0...v2.0.0-beta.1) (2022-10-31)
 
 

@@ -1,3 +1,12 @@
+# [2.0.0-beta.5](https://github.com/Junkher/vuepress-theme-junk/compare/v2.0.0-beta.4...v2.0.0-beta.5) (2022-11-01)
+
+
+### Bug Fixes
+
+* randomize homeLink after mounted ([3eacf34](https://github.com/Junkher/vuepress-theme-junk/commit/3eacf347be082c84ed401e3eb04528f7ece8f7fc))
+
+
+
 # [2.0.0-beta.4](https://github.com/Junkher/vuepress-theme-junk/compare/v2.0.0-beta.3...v2.0.0-beta.4) (2022-11-01)
 
 

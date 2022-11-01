@@ -73,6 +73,9 @@
         "typescript",
         "webpack"
       ]
+    },
+    "patchedDependencies": {
+      "@vuepress/plugin-toc@2.0.0-beta.53": "patches/@vuepress__plugin-toc@2.0.0-beta.53.patch"
     }
   }
 }

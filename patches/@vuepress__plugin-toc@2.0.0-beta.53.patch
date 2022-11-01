@@ -1,0 +1,16 @@
+diff --git a/lib/client/components/Toc.js b/lib/client/components/Toc.js
+index a4a20276dec121763454c08688192e86bdc9f332..b63dd55df2a2d17360c478bdbb3d278d10350dc7 100644
+--- a/lib/client/components/Toc.js
++++ b/lib/client/components/Toc.js
+@@ -61,10 +61,7 @@ export const Toc = defineComponent({
+         const page = usePageData();
+         const headers = computed(() => {
+             const headersToUse = propsHeaders.value || page.value.headers;
+-            // skip h1 header
+-            return headersToUse[0]?.level === 1
+-                ? headersToUse[0].children
+-                : headersToUse;
++            return headersToUse;
+         });
+         const options = computed(() => ({
+             containerTag: 'nav',

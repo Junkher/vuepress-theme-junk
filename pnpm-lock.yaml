@@ -1,5 +1,10 @@
 lockfileVersion: 5.4
 
+patchedDependencies:
+  '@vuepress/plugin-toc@2.0.0-beta.53':
+    hash: utgrnjvp5kgexlfurao7gsa3xm
+    path: patches/@vuepress__plugin-toc@2.0.0-beta.53.patch
+
 importers:
 
   .:
@@ -129,7 +134,7 @@ importers:
       '@vuepress/plugin-palette': 2.0.0-beta.53
       '@vuepress/plugin-prismjs': 2.0.0-beta.53
       '@vuepress/plugin-theme-data': 2.0.0-beta.53
-      '@vuepress/plugin-toc': 2.0.0-beta.53
+      '@vuepress/plugin-toc': 2.0.0-beta.53_utgrnjvp5kgexlfurao7gsa3xm
       '@vuepress/shared': 2.0.0-beta.53
       '@vuepress/utils': 2.0.0-beta.53
       '@vueuse/core': 9.4.0_vue@3.2.41
@@ -1464,7 +1469,7 @@ packages:
       - supports-color
     dev: false
 
-  /@vuepress/plugin-toc/2.0.0-beta.53:
+  /@vuepress/plugin-toc/2.0.0-beta.53_utgrnjvp5kgexlfurao7gsa3xm:
     resolution: {integrity: sha512-Hz+8ZT1ZAqZIYYaw574uGs896p3Jy4EKM3/nzX86vOaEWTTiWr54UHHiNXqeJGNkabREGAUxqcIfg6Afvpzi5w==}
     dependencies:
       '@vuepress/client': 2.0.0-beta.53
@@ -1475,6 +1480,7 @@ packages:
     transitivePeerDependencies:
       - supports-color
     dev: false
+    patched: true
 
   /@vuepress/shared/2.0.0-beta.53:
     resolution: {integrity: sha512-B0qWorGxC3ruSHdZcJW24XtEDEU3L3uPr0xzTeKVfHjOM4b9hN83YzBtW4n/WPnmk1RXVE9266Ulh9ZL5okGOw==}

@@ -14,9 +14,7 @@ const to =
 
 <template>
   <main class="hero">
-    <ClientOnly>
-      <div class="hero-content text-center" v-html="heroContent" />
-    </ClientOnly>
+    <div class="hero-content text-center" v-html="heroContent" />
     <a :href="`/home/${to}/`">{{ heroBtnText }}</a>
     <!-- <RouterLink to="/category"> Fk Me </RouterLink> -->
   </main>

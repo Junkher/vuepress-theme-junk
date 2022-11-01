@@ -18,7 +18,7 @@ const icons: Record<Platform, string> = {
 
 <template>
   <footer class="footer">
-    <span v-html="footerHtml" />
+    <div v-html="footerHtml" />
     <span>
       Powered by
       <a href="https://v2.vuepress.vuejs.org/">VuePress</a> &

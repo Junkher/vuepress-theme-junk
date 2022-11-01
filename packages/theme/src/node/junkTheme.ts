@@ -209,6 +209,10 @@ export const junkTheme = ({
           {
             key: 'category',
             getter: (page) => <string[]>page.frontmatter.category || [],
+            // sort pages by date
+            sorter: (pageA, pageB) =>
+              new Date(pageB.frontmatter.date as Date).getTime() -
+              new Date(pageA.frontmatter.date as Date).getTime(),
             path: '/home/',
             layout: 'Home',
             itemPath: '/home/:name',

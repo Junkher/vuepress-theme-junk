@@ -1,6 +1,6 @@
 html.dark {
   // brand colors
-  --c-brand: rgb(100 116 139);
+  --c-brand: rgb(143 143 143);
   --c-brand-light: rgb(203 213 225);
   --c-brand-lighter: white;
 
@@ -28,6 +28,10 @@ html.dark {
 
   // shadow colors
   --c-shadow: rgb(255 255 255 / 0.07);
+
+  // scrollbar colors
+  --c-scrollbar: rgb(40, 44, 52);
+  --c-scrollbar-active: rgb(103, 103, 103);
 
   // custom container colors
   --c-tip: #318a62;

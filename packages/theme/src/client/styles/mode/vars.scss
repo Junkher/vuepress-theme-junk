@@ -1,7 +1,7 @@
 :root {
   // brand colors
-  --c-brand: rgb(148 163 184);
-  --c-brand-light: rgb(100 116 139);
+  --c-brand: rgb(173 173 173);
+  --c-brand-light: rgb(143 143 143);
   --c-brand-lighter: rgb(30 41 59);
 
   // background colors
@@ -32,6 +32,10 @@
 
   // shadow colors
   --c-shadow: rgb(0 0 0 / 0.07);
+
+  // scrollbar colors
+  --c-scrollbar: rgb(173 173 173);
+  --c-scrollbar-active: rgb(143 143 143);
 
   // custom container colors
   --c-tip: #42b983;

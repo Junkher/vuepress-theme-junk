@@ -48,6 +48,26 @@
   }
 }
 
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+::-webkit-scrollbar-track-piece {
+  -webkit-border-radius: 6px;
+  border-radius: 6px;
+  background: var(--c-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--c-scrollbar);
+  border-radius: 6px;
+
+  &:active {
+    background: var(--c-scrollbar-active);
+  }
+}
+
 .vuepress-toc {
   position: absolute;
   width: var(--toc-width);

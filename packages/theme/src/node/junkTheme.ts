@@ -91,12 +91,24 @@ export const junkTheme = ({
 
     plugins: [
       // @vuepress/plugin-toc
-      themePlugins.toc !== false ? tocPlugin({}) : [],
+      themePlugins.toc !== false
+        ? tocPlugin({
+            defaultPropsOptions: {
+              containerClass: 'toc',
+              listClass: 'toc-list',
+              itemClass: 'toc-item',
+              linkTag: 'RouterLink',
+              linkClass: 'toc-link',
+              linkActiveClass: 'active',
+              linkChildrenActiveClass: 'active',
+            },
+          })
+        : [],
 
       // @vuepress/plugin-active-header-link
       themePlugins.activeHeaderLinks !== false
         ? activeHeaderLinksPlugin({
-            headerLinkSelector: 'a.vuepress-toc-link',
+            headerLinkSelector: 'a.toc-link',
             headerAnchorSelector: '.header-anchor',
             // should greater than page transition duration
             delay: 300,

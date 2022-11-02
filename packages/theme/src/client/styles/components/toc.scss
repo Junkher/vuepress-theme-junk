@@ -17,11 +17,12 @@
   }
 }
 
-.vuepress-toc {
+.toc {
   li {
     list-style-type: none;
     a {
       color: var(--c-link);
+      transition: all 0.4s ease-in-out;
       &:hover {
         color: var(--c-link-active);
       }
@@ -29,6 +30,7 @@
     a.active {
       color: var(--c-link-active);
       font-weight: bold;
+      padding-left: 4px;
     }
   }
 }

@@ -68,12 +68,12 @@
   }
 }
 
-.vuepress-toc {
+.toc {
   position: absolute;
   width: var(--toc-width);
   padding: 4px 0;
   margin-left: 2rem;
-  margin-top: 3rem;
+  margin-top: 4rem;
   list-style: none;
   font-size: 14px;
   border-left: 2px solid var(--c-border);
@@ -84,7 +84,7 @@
   @include hide_scrollbar;
 }
 
-.vuepress-toc.fixed {
+.toc.fixed {
   position: fixed;
   height: fit-content;
   top: 0;
@@ -194,7 +194,7 @@
   // .page {
   //   padding-left: var(--sidebar-width-mobile);
   // }
-  .vuepress-toc {
+  .toc {
     display: none;
   }
 }
@@ -206,7 +206,7 @@
     padding-top: var(--navbar-height);
     transform: translateX(-100%);
   }
-  .vuepress-toc {
+  .toc {
     display: none;
   }
 

@@ -4,31 +4,10 @@ import { usePageData } from '@vuepress/client'
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
 import type { JunkThemePageData } from '../../shared/index.js'
-// import { useThemeLocaleData } from '../composables/index.js'
 import ToggleColorModeButton from './ToggleColorModeButton.vue'
+import ToggleFullScreenButton from './ToggleFullScreenButton.vue'
 
 const isMenuOpen = ref(false)
-
-// const toggleMenu = (): void => {
-//   isMenuOpen.value = !isMenuOpen.value
-// }
-
-// let showTimer: ReturnType<typeof setTimeout>
-// let hideTimer: ReturnType<typeof setTimeout>
-
-// const showMenu = (): void => {
-//   clearTimeout(hideTimer)
-//   showTimer = setTimeout(() => {
-//     isMenuOpen.value = true
-//   }, 500)
-// }
-
-// const hideMenu = (): void => {
-//   clearTimeout(showTimer)
-//   showTimer = setTimeout(() => {
-//     isMenuOpen.value = false
-//   }, 3000)
-// }
 
 const scrollToTop = (): void => {
   window.scrollTo({
@@ -61,6 +40,7 @@ const backHome = (): void => {
     </div>
     <div class="menu-item-wrapper">
       <ToggleColorModeButton class="menu-item" />
+      <ToggleFullScreenButton class="menu-item" />
       <div class="menu-item" title="back to home" @click="backHome">
         <Icon icon="bx:home-heart" />
       </div>

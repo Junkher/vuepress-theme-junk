@@ -42,7 +42,7 @@ export const DEFAULT_LOCALE_OPTIONS: JunkThemeLocaleOptions = {
   // a11y
   openInNewWindow: 'open in new window',
   toggleColorMode: 'toggle color mode',
-  toggleSidebar: 'toggle sidebar',
+  toggleFullscreen: 'toggle fullscreen',
 }
 
 export const DEFAULT_LOCALE_DATA: JunkThemeLocaleData = {

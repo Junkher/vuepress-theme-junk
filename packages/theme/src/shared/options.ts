@@ -310,7 +310,7 @@ export interface JunkThemeLocaleData extends LocaleData {
   toggleColorMode?: string
 
   /**
-   * A11y text for sidebar toggle button
+   * A11y text for fullscreen toggle button
    */
-  toggleSidebar?: string
+  toggleFullscreen?: string
 }

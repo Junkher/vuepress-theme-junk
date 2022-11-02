@@ -105,7 +105,7 @@ export default defineUserConfig({
         // a11y
         openInNewWindow: '在新窗口打开',
         toggleColorMode: '切换颜色模式',
-        toggleSidebar: '切换侧边栏',
+        toggleFullscreen: '切换全屏模式',
       },
     },
 

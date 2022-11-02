@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { Icon } from '@iconify/vue'
 import { usePageData, usePageFrontmatter, withBase } from '@vuepress/client'
-import { inject } from 'vue'
+import { computed, inject } from 'vue'
 import type {
   JunkThemeNormalPageFrontmatter,
   Scroll,
@@ -14,20 +14,22 @@ const pageTopHeight = 340
 const paddingTop = 128
 
 const scroll = inject<Scroll>('scroll')!
+const shouldShowPageTop = computed(
+  () => scroll.y / pageTopHeight <= 1 && !scroll.arrivedState.bottom
+)
 </script>
 
 <template>
-  <div ref="d" class="page-top-holder">
+  <div class="page-top-holder">
     <div
+      v-show="shouldShowPageTop"
       class="page-top"
       :style="{
         'background-image': frontmatter.cover
           ? `url(${withBase(frontmatter.cover)})`
           : undefined,
         'padding-top': `${paddingTop - scroll.y}px`,
-        'opacity': !scroll.arrivedState.bottom
-          ? `${1 - scroll.y / pageTopHeight}`
-          : 0,
+        'opacity': `max(${1 - scroll.y / pageTopHeight}, 0)`,
       }"
     >
       <div class="page-top-mask"></div>

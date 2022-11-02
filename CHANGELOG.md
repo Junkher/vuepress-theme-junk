@@ -1,3 +1,19 @@
+# [2.0.0-beta.6](https://github.com/Junkher/vuepress-theme-junk/compare/v2.0.0-beta.5...v2.0.0-beta.6) (2022-11-02)
+
+
+### Bug Fixes
+
+* patch plugin-toc to not skip h1 ([d4c2f99](https://github.com/Junkher/vuepress-theme-junk/commit/d4c2f998cb13d7161bee5171d7410cfde3e239f8))
+* use `v-show` to hide pageTop ([26a8a36](https://github.com/Junkher/vuepress-theme-junk/commit/26a8a360c6fe671abc26f3d43a2c05f9b5d3536b))
+
+
+### Features
+
+* sort pages by date ([bd29342](https://github.com/Junkher/vuepress-theme-junk/commit/bd293420875a0fcc81f89217ecfdadd35acfec35))
+* support toggle fullscreen ([8cf3a3c](https://github.com/Junkher/vuepress-theme-junk/commit/8cf3a3ce918420838fcc65ea309a07b3a5431c43))
+
+
+
 # [2.0.0-beta.5](https://github.com/Junkher/vuepress-theme-junk/compare/v2.0.0-beta.4...v2.0.0-beta.5) (2022-11-01)
 
 

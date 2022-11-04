@@ -20,10 +20,9 @@
     "@vuepress/plugin-register-components": "2.0.0-beta.53",
     "@vuepress/plugin-shiki": "2.0.0-beta.53",
     "@vuepress/utils": "2.0.0-beta.53",
-    "anywhere": "^1.6.0",
-    "sass-loader": "^13.0.2",
+    "sass-loader": "^13.1.0",
     "serve": "^14.0.1",
-    "vue": "^3.2.39",
+    "vue": "^3.2.41",
     "vuepress-theme-junk": "workspace:*"
   }
 }

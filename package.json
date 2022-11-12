@@ -9,7 +9,7 @@
     "build:copy": "pnpm --parallel --stream copy",
     "clean": "pnpm --parallel --stream clean",
     "dev:deprecated": "pnpm concurrently -r \"pnpm build:all --watch\" \"pnpm run build:copy --watch\" \"pnpm docs:dev\"",
-    "dev:all": "pnpm -r --stream build --watch",
+    "dev:all": "tsc -b tsconfig.build.json --watch",
     "dev:copy": "pnpm --parallel --stream copy --watch",
     "dev": "run-p dev:all dev:copy",
     "dev:tsc": "pnpm concurrently -r \"tsc -b tsconfig.build.json --watch\" \"pnpm run build:copy --watch\" \"pnpm docs:dev\"",

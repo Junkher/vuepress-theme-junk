@@ -1,0 +1,49 @@
+{
+  "name": "vuepress-plugin-menu",
+  "version": "2.0.0-beta.6",
+  "description": "A menu plugin for VuePress",
+  "keywords": [
+    "vuepress-plugin",
+    "menu",
+    "plugin",
+    "vuepress"
+  ],
+  "bugs": {
+    "url": "https://github.com/junkher/vuepress-theme-junk/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/junkher/vuepress-theme-junk.git",
+    "directory": "packages/plugin-menu"
+  },
+  "license": "MIT",
+  "author": "junkher",
+  "type": "module",
+  "exports": {
+    ".": "./lib/node/index.js",
+    "./client": "./lib/client/index.js",
+    "./package.json": "./package.json"
+  },
+  "main": "./lib/node/index.js",
+  "types": "./lib/node/index.d.ts",
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "build": "tsc -b tsconfig.build.json",
+    "clean": "rimraf lib *.tsbuildinfo",
+    "copy": "cpx \"src/**/*.{d.ts,vue,scss,css}\" lib"
+  },
+  "dependencies": {
+    "@vuepress/client": "2.0.0-beta.53",
+    "@vuepress/core": "2.0.0-beta.53",
+    "@vuepress/shared": "2.0.0-beta.53",
+    "@vuepress/utils": "2.0.0-beta.53",
+    "chokidar": "^3.5.3",
+    "vue": "^3.2.41",
+    "vue-router": "^4.1.6"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

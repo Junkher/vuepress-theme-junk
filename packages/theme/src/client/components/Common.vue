@@ -1,10 +1,10 @@
 <script setup lang="ts">
 import Footer from '@theme/Footer.vue'
-import Menu from '@theme/Menu.vue'
+import ToolKit from '@theme/Toolkit.vue'
 </script>
 
 <template>
   <slot />
-  <Menu />
+  <ToolKit />
   <Footer />
 </template>

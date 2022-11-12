@@ -1,9 +1,18 @@
 import type { ThemeData } from '@vuepress/plugin-theme-data'
 import type { LocaleData } from '@vuepress/shared'
+import type { Group } from 'vuepress-plugin-menu'
 import type { NavbarConfig, SidebarConfig } from './nav.js'
 import type { PersonalConfig } from './personal.js'
 
 export interface JunkThemePluginsOptions {
+  /**
+   * Enable vuepress-plugin-menu or not
+   */
+  menu?: boolean
+  /**
+   * Enable vuepress-plugin-blog2 or not
+   */
+  blog?: boolean
   /**
    * Enable @vuepress/plugin-git or not
    */
@@ -61,6 +70,11 @@ export type JunkThemeLocaleOptions = JunkThemeData
 export type JunkThemeData = ThemeData<JunkThemeLocaleData>
 
 export interface JunkThemeLocaleData extends LocaleData {
+  /**
+   *  group settings of menu-plugin
+   */
+  menuGroups?: Group[]
+
   /**
    * Default color mode
    *

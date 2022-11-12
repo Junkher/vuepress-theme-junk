@@ -65,7 +65,8 @@
     "tailwindcss": "^3.1.8",
     "vue": "^3.2.41",
     "vue-router": "^4.1.6",
-    "vuepress-plugin-blog2": "2.0.0-beta.116"
+    "vuepress-plugin-blog2": "2.0.0-beta.116",
+    "vuepress-plugin-menu": "workspace:*"
   },
   "devDependencies": {
     "@iconify-json/mdi": "^1.1.34"

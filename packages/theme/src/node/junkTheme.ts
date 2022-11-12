@@ -14,9 +14,10 @@ import { tocPlugin } from '@vuepress/plugin-toc'
 import { fs, getDirname, path } from '@vuepress/utils'
 // import autoprefixer from 'autoprefixer'
 // import tailwindcss from 'tailwindcss'
-import { blogPlugin } from 'vuepress-plugin-blog2'
+import { menuPlugin } from 'vuepress-plugin-menu'
 import type {
   JunkThemeLocaleOptions,
+  JunkThemeNormalPageFrontmatter,
   JunkThemePageData,
   JunkThemePluginsOptions,
 } from '../shared/index.js'
@@ -75,7 +76,12 @@ export const junkTheme = ({
       // }
     },
 
-    extendsPage: (page: Page<Partial<JunkThemePageData>>) => {
+    extendsPage: (
+      page: Page<
+        Partial<JunkThemePageData>,
+        Partial<JunkThemeNormalPageFrontmatter>
+      >
+    ) => {
       // save relative file path into page data to generate edit link
       page.data.filePathRelative = page.filePathRelative
       // save title into route meta to generate navbar and sidebar
@@ -90,6 +96,27 @@ export const junkTheme = ({
     },
 
     plugins: [
+      // vuepress-plugin-menu
+      themePlugins.menu !== false
+        ? menuPlugin({
+            filter: ({ frontmatter }): boolean => !frontmatter.draft,
+            sorter: (pageA, pageB) =>
+              new Date(pageB.frontmatter.date as Date).getTime() -
+              new Date(pageA.frontmatter.date as Date).getTime(),
+            getPageInfo: ({ frontmatter, data }) => ({
+              title: data.title || '',
+              date: frontmatter.date || null,
+              tag: frontmatter.tag || [],
+              description: frontmatter.description || '',
+              cover: frontmatter.cover || '',
+            }),
+            path: '/home/',
+            layout: 'Home',
+            itemLayout: 'Home',
+            groups: localeOptions.menuGroups,
+          })
+        : [],
+
       // @vuepress/plugin-toc
       themePlugins.toc !== false
         ? tocPlugin({
@@ -203,40 +230,6 @@ export const junkTheme = ({
       themeDataPlugin({ themeData: localeOptions }),
 
       // vuepress-plugin-blog2
-      blogPlugin({
-        metaScope: '',
-        filter: ({ frontmatter }): boolean => !frontmatter.draft,
-        // getting article info
-        getInfo: ({ frontmatter, data }) => ({
-          title: data.title || '',
-          author: frontmatter.author || '',
-          date: frontmatter.date || null,
-          category: frontmatter.category || [],
-          tag: frontmatter.tag || [],
-          description: frontmatter.description || '',
-          cover: frontmatter.cover || '',
-        }),
-
-        category: [
-          {
-            key: 'category',
-            getter: (page) => <string[]>page.frontmatter.category || [],
-            // sort pages by date
-            sorter: (pageA, pageB) =>
-              new Date(pageB.frontmatter.date as Date).getTime() -
-              new Date(pageA.frontmatter.date as Date).getTime(),
-            path: '/home/',
-            layout: 'Home',
-            itemPath: '/home/:name',
-            itemLayout: 'Home',
-            frontmatter: () => ({ title: 'Home' }),
-            itemFrontmatter: (name) => ({
-              title: `${name}`,
-              sideBar: false,
-            }),
-          },
-        ],
-      }),
     ],
     onInitialized: async (app): Promise<void> => {
       if (app.pages.every((page) => page.path !== '/')) {

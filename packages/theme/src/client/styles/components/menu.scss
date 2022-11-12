@@ -1,77 +1,42 @@
 @import '../_mixins';
 @import '../_variables';
 
-//timing function
-$bounce: cubic-bezier(0.175, 0.885, 0.32, 1.275);
-
-//delay
-$show-delay: 300ms;
-$hide-delay: 3000ms;
-
-.menu-wrapper {
-  position: fixed;
-  @include centered;
-  bottom: 70px;
-  right: 70px;
-  width: 50px;
-  height: 50px;
-  z-index: 50;
-}
-
-.menu-btn {
-  position: absolute;
-  @include centered;
-  opacity: 0.4;
-  cursor: pointer;
-  z-index: 20;
-  transition: all 0.5s ease-in-out $hide-delay;
-}
-
-.menu-item {
-  position: absolute;
-  @include centered;
-  color: var(--c-brand);
-  font-size: 30px;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  opacity: 0;
-  cursor: pointer;
-  transition: transform 0.3s ease-in-out $hide-delay,
-    opacity 0.3s ease-in-out $hide-delay;
-  // transition-delay: 3000ms;
-  z-index: 10;
-}
-
-.menu-wrapper.open {
-  .menu-btn {
-    opacity: 0.9;
-    transform: rotateZ(180deg) scale(0.5);
-    transition: all 0.4s ease-in-out $show-delay;
-    color: var(--c-brand-lighter);
-    // transition-delay: 500ms;
+.menu {
+  .menu-item-list {
+    display: flex;
+    flex-direction: row;
+    border-bottom: 1px solid var(--c-border);
+    .menu-item {
+      display: inline-block;
+      vertical-align: middle;
+      overflow: hidden;
+      padding: 0.4rem 0.5rem;
+      margin-right: 7rem;
+      font-size: 1.25rem;
+      line-height: 1.75rem;
+      cursor: pointer;
+      transition: color 0.5s ease;
+      color: var(--c-link);
+      &.router-link-active {
+        color: var(--c-link-active);
+        font-weight: 600;
+        border-bottom-style: solid;
+        border-bottom-width: 2px;
+        border-bottom-left-radius: 2px;
+        border-bottom-right-radius: 2px;
+      }
+      &:hover {
+        color: var(--c-link-active);
+      }
+    }
   }
-  .menu-item {
-    opacity: 0.9;
-    color: var(--c-brand);
-    &:nth-child(1) {
-      transform: translateX(50px);
+}
+
+@media (max-width: $MQMobile) {
+  .menu .menu-item-list {
+    justify-content: space-around;
+    .menu-item {
+      margin-right: 0;
     }
-    &:nth-child(2) {
-      transform: translateY(50px);
-    }
-    &:nth-child(3) {
-      transform: translateX(-50px);
-    }
-    &:nth-child(4) {
-      transform: translateY(-50px);
-    }
-    cursor: pointer;
-    &:hover {
-      color: var(--c-brand-light);
-    }
-    transition: transform 0.4s $bounce $show-delay,
-      opacity 0.4s ease-in-out $show-delay;
   }
 }

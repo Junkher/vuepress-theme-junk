@@ -1,14 +1,14 @@
 <script setup lang="ts">
 import About from '@theme/About.vue'
-import Category from '@theme/Category.vue'
 import Common from '@theme/Common.vue'
+import Menu from '@theme/Menu.vue'
 </script>
 
 <template>
   <Common>
     <main class="home">
       <About />
-      <Category />
+      <Menu />
     </main>
   </Common>
 </template>

@@ -1,20 +1,16 @@
 <script setup lang="ts">
 import { onMounted, ref } from 'vue'
-import { useBlogCategory } from 'vuepress-plugin-blog2/client'
 import { useThemeLocaleData } from '../composables/index.js'
 
 const themeLocale = useThemeLocaleData()
 const heroContent = themeLocale.value.heroContent
 const heroBtnText = themeLocale.value.heroBtnText
 
-const categoryMap = useBlogCategory('category')
-const categories = Object.keys(categoryMap.value.map)
-
+// get random group path as home link
 const homeLink = ref('')
-const getRandomTo = (): string =>
-  categories[Math.floor(Math.random() * categories.length)].toLowerCase()
+const groupPaths = themeLocale.value.menuGroups!.map(({ path }) => path)
 onMounted(() => {
-  homeLink.value = `/home/${getRandomTo()}/`
+  homeLink.value = groupPaths[Math.floor(Math.random() * groupPaths.length)]
 })
 </script>
 

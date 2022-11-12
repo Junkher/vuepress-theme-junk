@@ -1,54 +1,27 @@
 <script setup lang="ts">
-import { Icon } from '@iconify/vue'
-import { usePageData } from '@vuepress/client'
-import { ref } from 'vue'
-import { useRouter } from 'vue-router'
-import type { JunkThemePageData } from '../../shared/index.js'
-import ToggleColorModeButton from './ToggleColorModeButton.vue'
-import ToggleFullScreenButton from './ToggleFullScreenButton.vue'
+import PostList from '@theme/PostList.vue'
+import { computed } from 'vue'
+import { RouterLink } from 'vue-router'
+import { useMenu } from 'vuepress-plugin-menu/client'
+import type { JunkThemePost } from '../../shared/index.js'
 
-const isMenuOpen = ref(false)
-
-const scrollToTop = (): void => {
-  window.scrollTo({
-    top: 0,
-    behavior: 'smooth',
-  })
-}
-
-const page = usePageData<JunkThemePageData>()
-const relPermalink = page.value.filePathRelative
-const backHomeLink = relPermalink
-  ? `/home/${relPermalink.split('/')[1]}/`
-  : null
-
-const route = useRouter()
-const backHome = (): void => {
-  if (backHomeLink) route.push(backHomeLink)
-}
+const menu = useMenu()
+const postItems = computed(() => menu.value.currentPosts as JunkThemePost[])
 </script>
 
 <template>
-  <div
-    class="menu-wrapper"
-    :class="{ open: isMenuOpen }"
-    @mouseover="isMenuOpen = true"
-    @mouseout="isMenuOpen = false"
-  >
-    <div class="menu-btn" title="menu">
-      <Icon icon="ep:menu" width="40" />
-    </div>
-    <div class="menu-item-wrapper">
-      <ToggleColorModeButton class="menu-item" />
-      <ToggleFullScreenButton class="menu-item" />
-      <div class="menu-item" title="back to home" @click="backHome">
-        <Icon icon="bx:home-heart" />
-      </div>
-      <div class="menu-item" title="top" @click="scrollToTop">
-        <Icon icon="akar-icons:chevron-up" />
-      </div>
+  <!-- <input type="range" min="0" max="100" value="4" class="range" /> -->
+  <div class="menu">
+    <div class="menu-item-list">
+      <RouterLink
+        v-for="({ path, name }, key) in menu.map"
+        :key="key"
+        :to="path"
+        class="menu-item"
+      >
+        {{ name }}
+      </RouterLink>
     </div>
   </div>
+  <PostList :items="postItems ?? []" />
 </template>
-
-<style></style>

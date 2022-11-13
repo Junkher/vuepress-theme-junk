@@ -38,6 +38,7 @@ export default defineUserConfig({
   bundler:
     process.env.DOCS_BUNDLER === 'webpack' ? webpackBundler() : viteBundler(),
 
+  // specify the pages to be create
   pagePatterns: [
     'content/life/*.md',
     'content/poem/*.md',
@@ -46,6 +47,16 @@ export default defineUserConfig({
     '!.vuepress',
     '!node_modules',
   ],
+
+  // simplify the route path of page
+  extendsPage: (page) => {
+    if (page.filePathRelative?.startsWith('content')) {
+      page.path = page.path.replace('/content', '')
+    }
+  },
+
+  // set app.env.debug to true
+  // debug: true,
 
   // configure default theme
   theme: junkTheme({
@@ -73,6 +84,24 @@ export default defineUserConfig({
         telegram: 'https://t.me/junkh_er',
       },
     },
+
+    menuGroups: [
+      {
+        path: '/poem/',
+        name: 'POEM',
+        weight: 1,
+      },
+      {
+        path: '/life/',
+        name: 'LIFE',
+        weight: 2,
+      },
+      {
+        path: '/tech/',
+        name: 'TECH',
+        weight: 3,
+      },
+    ],
 
     // theme-level locales config
     locales: {

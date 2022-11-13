@@ -1,3 +1,23 @@
+# [2.0.0-beta.7](https://github.com/Junkher/vuepress-theme-junk/compare/v2.0.0-beta.6...v2.0.0-beta.7) (2022-11-13)
+
+
+### Code Refactoring
+
+* **theme:** replace plugin-blog2 with plugin-menu ([7991347](https://github.com/Junkher/vuepress-theme-junk/commit/7991347eda651f875523cb87ac88ac40339e81aa))
+
+
+### Features
+
+* add menu plugin ([318cec8](https://github.com/Junkher/vuepress-theme-junk/commit/318cec84fa152af8749f7354ff78bfa3d84b6ec9))
+
+
+### BREAKING CHANGES
+
+* **theme:** `menu` has been renamed to `toolkit`
+* **theme:** `category` has been renamed to `menu`
+
+
+
 # [2.0.0-beta.6](https://github.com/Junkher/vuepress-theme-junk/compare/v2.0.0-beta.5...v2.0.0-beta.6) (2022-11-02)
 
 

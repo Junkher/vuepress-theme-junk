@@ -99,7 +99,8 @@ export const junkTheme = ({
       // vuepress-plugin-menu
       themePlugins.menu !== false
         ? menuPlugin({
-            filter: ({ frontmatter }): boolean => !frontmatter.draft,
+            filter: (page): boolean =>
+              Boolean(page.filePathRelative) && !page.frontmatter.draft,
             sorter: (pageA, pageB) =>
               new Date(pageB.frontmatter.date as Date).getTime() -
               new Date(pageA.frontmatter.date as Date).getTime(),

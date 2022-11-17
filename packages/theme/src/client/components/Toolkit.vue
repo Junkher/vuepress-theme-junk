@@ -31,8 +31,8 @@ const backHome = (): void => {
   <div
     class="toolkit-wrapper"
     :class="{ open: isToolkitOpen }"
-    @mouseover="isToolkitOpen = true"
-    @mouseout="isToolkitOpen = false"
+    @mouseenter="isToolkitOpen = true"
+    @mouseleave="isToolkitOpen = false"
   >
     <div class="toolkit-btn" title="toolkit">
       <Icon icon="ep:menu" width="40" />

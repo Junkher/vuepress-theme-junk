@@ -3,10 +3,10 @@ import PostList from '@theme/PostList.vue'
 import { computed } from 'vue'
 import { RouterLink } from 'vue-router'
 import { useMenu } from 'vuepress-plugin-menu/client'
-import type { JunkThemePost } from '../../shared/index.js'
+import type { JunkThemePostInfo } from '../../shared/index.js'
 
-const menu = useMenu()
-const postItems = computed(() => menu.value.currentPosts as JunkThemePost[])
+const menu = useMenu<JunkThemePostInfo>()
+const postItems = computed(() => menu.value.currentPosts ?? [])
 </script>
 
 <template>
@@ -23,5 +23,5 @@ const postItems = computed(() => menu.value.currentPosts as JunkThemePost[])
       </RouterLink>
     </div>
   </div>
-  <PostList :items="postItems ?? []" />
+  <PostList :items="postItems" />
 </template>

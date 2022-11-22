@@ -1,4 +1,4 @@
-import type { Article } from 'vuepress-plugin-blog2'
+import type { Post } from 'vuepress-plugin-menu'
 
 export interface JunkThemePostInfo extends Record<string, unknown> {
   title: string
@@ -7,4 +7,4 @@ export interface JunkThemePostInfo extends Record<string, unknown> {
   cover: string | null
 }
 
-export type JunkThemePost = Article<JunkThemePostInfo>
+export type JunkThemePost = Post<JunkThemePostInfo>

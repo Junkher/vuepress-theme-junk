@@ -3,6 +3,7 @@ import { h } from 'vue'
 import { Badge, CodeGroup, CodeGroupItem } from './components/global/index.js'
 import {
   setupDarkMode,
+  setupGroupMap,
   setupSidebarItems,
   useScrollPromise,
 } from './composables/index.js'
@@ -50,6 +51,7 @@ export default defineClientConfig({
   setup() {
     setupDarkMode()
     setupSidebarItems()
+    setupGroupMap()
   },
 
   layouts: {

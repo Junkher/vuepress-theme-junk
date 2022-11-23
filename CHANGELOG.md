@@ -1,3 +1,18 @@
+# [2.0.0-beta.8](https://github.com/Junkher/vuepress-theme-junk/compare/v2.0.0-beta.7...v2.0.0-beta.8) (2022-11-23)
+
+
+### Features
+
+* **theme:** add prev/next pageNav ([4eb3504](https://github.com/Junkher/vuepress-theme-junk/commit/4eb35049d29586218ba05f79eaa8fdcf8f578178))
+
+
+### Performance Improvements
+
+* **theme:** improve plugin-menu filter ([2ac7c6a](https://github.com/Junkher/vuepress-theme-junk/commit/2ac7c6a77cae5dd6ec91c31955423de19d6fb5b7))
+* **theme:** use `mouseenter/leave` to avoid bubbling ([ec81195](https://github.com/Junkher/vuepress-theme-junk/commit/ec81195b724ffb437d14b6ab460399536e9054de))
+
+
+
 # [2.0.0-beta.7](https://github.com/Junkher/vuepress-theme-junk/compare/v2.0.0-beta.6...v2.0.0-beta.7) (2022-11-13)
 
 

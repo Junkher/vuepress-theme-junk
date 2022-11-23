@@ -12,6 +12,7 @@
   .post-list-wrapper {
     @include home_wrapper;
     margin-top: 2rem;
+    margin-bottom: 2rem;
     z-index: 0;
   }
 }
